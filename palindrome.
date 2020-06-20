@@ -1,0 +1,35 @@
+import java.util.*; 
+import java.util.function.Predicate;  
+
+class IsPalindrome{
+    public static boolean isPalindrome(String str){
+          String reverse = "";
+          int length = str.length();
+         
+        for ( int i = length - 1; i >= 0; i-- )
+            reverse = reverse + str.charAt(i);
+         
+        return str.equals(reverse);
+    }
+}
+
+class Solution { 
+ 
+    public static void main(String[] args) 
+    { 
+       List<String> str=Arrays.asList("abba","tomato","pop","kill","abb","civic","level");
+       List<String> palindromes=filterList(str,IsPalindrome::isPalindrome);
+       System.out.print(palindromes);
+    }
+    public static List<String> filterList(List<String> str,Predicate<String> predicate){
+        List<String> finalList=new ArrayList<>();
+        for(String s:str){
+            if(predicate.test(s)){
+                finalList.add(s);
+            }
+        }
+        return finalList;
+    }
+}
+
+  

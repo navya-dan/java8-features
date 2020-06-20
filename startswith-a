@@ -1,0 +1,12 @@
+import java.util.*; 
+import java.util.stream.Collectors;  
+
+class Solution { 
+ 
+    public static void main(String[] args) 
+    { 
+       List<String> str=Arrays.asList("abc","cde","Ant","pop","apple","app");
+       List<String> ans=str.stream().filter(t->(t.charAt(0)=='a' && t.length()==3)).collect(Collectors.toList());
+       System.out.print(ans);
+    }
+}

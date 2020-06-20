@@ -1,0 +1,14 @@
+import java.util.*; 
+import java.util.stream.IntStream;
+  
+class Solution { 
+ 
+    public static void main(String[] args) 
+    { 
+       IntStream list=IntStream.of(1,2,3,4,5);
+        OptionalDouble obj=list.average();
+        if(obj.isPresent()){
+            System.out.print(obj.getAsDouble());
+        }
+    }
+}
